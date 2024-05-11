@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати книгу</title>
+</head>
+<body>
+    <h1>Додати книгу</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="назва">Назва:</label>
+        <input type="text" name="назва" required><br>
+        <label for="автор">Автор:</label>
+        <input type="text" name="автор" required><br>
+        <label for="isbn">ISBN:</label>
+        <input type="text" name="isbn" required><br>
+        <label for="категорія">Категорія:</label>
+        <select name="категорія" required>
+            {% for категорія in категорії %}
+                <option value="{{ категорія.id }}">{{ категорія.категорія }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="автор">Автор:</label>
+        <select name="автор" required>
+            {% for автор in автори %}
+                <option value="{{ автор.id }}">{{ автор.автор }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Додати</button>
+    </form>
+    <a href="{{ url_for('панель_контролю') }}">Повернутися до панелі контролю</a>
+</body>
+</html>

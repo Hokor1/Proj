@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Видалити книгу</title>
+</head>
+<body>
+    <h1>Видалити книгу</h1>
+    <p>Ви впевнені, що хочете видалити книгу "{{ книга.назва }}"?</p>
+    <form method="post">
+        <button type="submit">Так, видалити</button>
+    </form>
+    <a href="{{ url_for('панель_контролю') }}">Повернутися до панелі контролю</a>
+</body>
+</html>
